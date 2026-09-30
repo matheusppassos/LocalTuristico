@@ -1,0 +1,170 @@
+:root {
+  --bg: #f5f4f0;
+  --accent: #e1624f;
+  --accent-text: #b44e3f; /* accent darkened to 4.65:1 for small text (AA) */
+  --heading: #1b1b1b;
+  --text: #333;
+  --line: #d9d9d9;
+  --section-gap: 4rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.6 "Open Sans", sans-serif;
+}
+
+main,
+footer {
+  width: min(75rem, 100% - 2rem);
+  margin-inline: auto;
+}
+
+main > section {
+  padding-block: var(--section-gap);
+}
+
+.intro {
+  border-bottom: 1px solid var(--line);
+}
+
+p {
+  max-width: 70ch;
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--accent-text);
+  color: var(--bg);
+}
+
+.kicker {
+  margin-bottom: 0.5rem;
+  color: var(--accent-text);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 1.5rem;
+  color: var(--heading);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: clamp(1.625rem, 1rem + 2.5vw, 2rem);
+}
+
+h3 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 1rem + 2vw, 1.75rem);
+}
+
+main img {
+  border-radius: clamp(1rem, 4vw, 1.75rem);
+}
+
+/* taller crop on phones so the bridge isn't a thin strip; ~native 1.85:1 from 500px up */
+figure img {
+  width: 100%;
+  height: clamp(16rem, 52vw, 40.5rem);
+  object-fit: cover;
+  object-position: 70% 50%;
+}
+
+figure {
+  margin-top: 3rem;
+}
+
+figcaption {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.attraction {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+  gap: 2rem 3rem;
+  align-items: center;
+  margin-top: var(--section-gap);
+}
+
+.good-for {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.good-for :is(p, ul, li) {
+  display: inline;
+  padding: 0;
+}
+
+.good-for li + li::before {
+  content: "• " / "";
+  color: var(--line);
+}
+
+.historia { color: #0c51a7; }
+.casais { color: #591b98; }
+.familia { color: #d32156; } /* #e5245e darkened for AA */
+.orcamento { color: #ba4b0d; } /* #e95e10 darkened for AA */
+
+footer {
+  padding-block: var(--section-gap);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+footer p {
+  margin-inline: auto;
+}
+
+.signature {
+  margin-block: 1.5rem 2rem;
+  color: var(--heading);
+  font: 1.25rem "Alice", serif;
+}
+
+.heart {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: var(--accent);
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--accent-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
+}
